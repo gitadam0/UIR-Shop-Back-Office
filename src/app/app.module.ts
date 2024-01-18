@@ -11,8 +11,8 @@ import {routes} from './app.route';
 
 import {AppComponent} from './app.component';
 
-// service
-import {AppService} from './service/app.service';
+// services
+import {AppService} from './services/app.service';
 
 // store
 import {StoreModule} from '@ngrx/store';
