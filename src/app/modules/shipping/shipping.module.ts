@@ -8,6 +8,8 @@ import { ViewShippingComponent } from './view-shipping/view-shipping.component';
 import { CreatePersonComponent } from './delivery-person/create-person/create-person.component';
 import { EditPersonComponent } from './delivery-person/edit-person/edit-person.component';
 import { ListPersonComponent } from './delivery-person/list-person/list-person.component';
+import {FormsModule} from "@angular/forms";
+import {MenuModule} from "headlessui-angular";
 
 
 
@@ -26,7 +28,9 @@ import { ListPersonComponent } from './delivery-person/list-person/list-person.c
         ListShippingComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        FormsModule,
+        MenuModule
     ]
 })
 export class ShippingModule { }
