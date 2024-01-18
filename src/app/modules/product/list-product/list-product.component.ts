@@ -78,4 +78,18 @@ export class ListProductComponent implements OnInit {
       }
     );
   }
+  deleteProduct(productId: number) {
+    // Assuming you have an API endpoint for deleting a product
+    const deleteApiUrl = `http://38.242.131.85:8058/api/v1/products/${productId}`;
+
+    this.httpClient.delete(deleteApiUrl).subscribe(
+      () => {
+        // Refresh the data after successful deletion
+        this.fetchData();
+      },
+      (error) => {
+        console.error('Error deleting product:', error);
+      }
+    );
+  }
 }
