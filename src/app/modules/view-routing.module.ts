@@ -8,6 +8,7 @@ import {ProductCategoryComponent} from "./product-category/product-category.comp
 import {ShippingComponent} from "./shipping/shipping.component";
 import {StockComponent} from "./stock/stock.component";
 import {SupplierComponent} from "./supplier/supplier.component";
+import { ListProductComponent } from "./stock/list-product/list-product/list-product.component";
 
 const routes: Routes = [
     {
@@ -37,6 +38,10 @@ const routes: Routes = [
     {
         path: 'stock',
         component: StockComponent
+    },
+    {
+        path: 'stock/products',
+        component: ListProductComponent
     },
     {
         path: 'supplier',

@@ -6,6 +6,8 @@ import { EditStockComponent } from './edit-stock/edit-stock.component';
 import { ListStockComponent } from './list-stock/list-stock.component';
 import { ViewStockComponent } from './view-stock/view-stock.component';
 import {ShippingModule} from "../shipping/shipping.module";
+import { ListProductComponent } from './list-product/list-product/list-product.component';
+
 
 
 
@@ -15,10 +17,11 @@ import {ShippingModule} from "../shipping/shipping.module";
       CreateStockComponent,
       EditStockComponent,
       ListStockComponent,
-      ViewStockComponent
+      ViewStockComponent,
+      ListProductComponent
   ],
     imports: [
-        CommonModule,
+        CommonModule
     ]
 })
 export class StockModule { }
