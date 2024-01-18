@@ -1,1 +1,65 @@
-<p>list-payment works!</p>
+<div class="panel">
+    <div class="mb-5 flex items-center justify-between">
+        <h5 class="text-lg font-semibold dark:text-white-light">Dropdown</h5>
+        <a class="font-semibold hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-600" href="javascript:;"></a>
+    </div>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Sale</th>
+                <th>Status</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of tableData;">
+                <td class="whitespace-nowrap"> data.name </td>
+                <td> data.date </td>
+                <td> data.sale </td>
+                <td>
+                    <span
+                        class="badge whitespace-nowrap"
+                        [ngClass]="{
+                                'bg-primary': data.status === 'Complete',
+                                'bg-secondary': data.status === 'Pending',
+                                'bg-success': data.status === 'In Progress',
+                                'bg-danger': data.status === 'Canceled'
+                            }"
+                        >  data.status </span
+                    >
+                </td>
+                <td class="text-center">
+                    <div class="dropdown w-max"  (click)="actionBtn(data.id)">
+                        <div hlMenu>
+                            <a hlMenuButton href="javascript:;" class="align-middle">
+                                <svg class="m-auto h-5 w-5 opacity-70" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="12" r="2" stroke="currentColor" stroke-width="1.5"></circle>
+                                    <circle opacity="0.5" cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1.5"></circle>
+                                    <circle cx="19" cy="12" r="2" stroke="currentColor" stroke-width="1.5"></circle>
+                                </svg>
+                            </a>
+                            <ul  class="ltr:right-0 rtl:left-0 " [class.hidden]="data.id !== dataId"  >
+                                <li>
+                                    <a href="javascript:;" >Download</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" >Share</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" >Edit</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" >Delete</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>   

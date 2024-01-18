@@ -1,3 +1,4 @@
+import { CommandeDto } from "./CommandeDto.model";
 import { EtatPaiement } from "./enum/etat-paiement.";
 import { MethodDePaiement } from "./enum/method-de-paiement";
 
