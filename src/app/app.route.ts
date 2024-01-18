@@ -19,7 +19,7 @@ export const routes: Routes = [
             {
                 path: '',
                 loadChildren: () => import('./modules/view-routing.module').then(m => m.ViewRoutingModule), // @Lazy loading
-            },
+            }
 
         ],
     },
