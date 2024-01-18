@@ -5,6 +5,9 @@ import { CreateShippingComponent } from './create-shipping/create-shipping.compo
 import { EditShippingComponent } from './edit-shipping/edit-shipping.component';
 import { ListShippingComponent } from './list-shipping/list-shipping.component';
 import { ViewShippingComponent } from './view-shipping/view-shipping.component';
+import { CreatePersonComponent } from './delivery-person/create-person/create-person.component';
+import { EditPersonComponent } from './delivery-person/edit-person/edit-person.component';
+import { ListPersonComponent } from './delivery-person/list-person/list-person.component';
 
 
 
@@ -14,7 +17,10 @@ import { ViewShippingComponent } from './view-shipping/view-shipping.component';
         CreateShippingComponent,
         EditShippingComponent,
         ListShippingComponent,
-        ViewShippingComponent
+        ViewShippingComponent,
+        CreatePersonComponent,
+        EditPersonComponent,
+        ListPersonComponent
     ],
     exports: [
         ListShippingComponent
