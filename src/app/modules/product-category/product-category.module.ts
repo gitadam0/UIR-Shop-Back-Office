@@ -5,6 +5,7 @@ import {CreateProductCategoryComponent} from "./create-product-category/create-p
 import {EditProductCategoryComponent} from "./edit-product-category/edit-product-category.component";
 import {ListProductCategoryComponent} from "./list-product-category/list-product-category.component";
 import {ViewProductCategoryComponent} from "./view-product-category/view-product-category.component";
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import {ViewProductCategoryComponent} from "./view-product-category/view-product
       ViewProductCategoryComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class ProductCategoryModule { }
