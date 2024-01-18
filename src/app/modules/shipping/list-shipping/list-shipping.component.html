@@ -1,1 +1,79 @@
-<p>list-shipping works!</p>
+<div class="w-full datatable">
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Adresse</th>
+                
+                <th>Status</th>
+                <th>Etat de Paiment</th>
+                <th>Mode de paiment</th>
+                <th>Prix Total</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of tableData2;let i=index">
+                <td class="whitespace-nowrap"> {{i+1}} </td>
+                <td> {{parseClientList[i].address}} </td>
+                <td> {{data.totalPaye}} </td>
+                <td>
+                    <span
+                        class="badge whitespace-nowrap"
+                        [ngClass]="{
+                                'bg-primary': data.status == 'PENDING',
+                                'bg-secondary': data.status == 'DELIVERED',
+                                'bg-danger': data.status == 'CANCELLED'
+                            }">  {{data.status}} </span
+                    >
+                </td>
+                <td>{{data.etatPaiement}}</td>
+                <td>{{data.methodDePaiement}}</td>
+                <td> {{data.totalPaye}} </td>
+                <td class="text-center">
+                    <div class="dropdown w-max"  (click)="actionClick(data.id)" >
+                        <div hlMenu>
+                            <a hlMenuButton href="javascript:;" class="align-middle">
+                                <svg class="m-auto h-5 w-5 opacity-70" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="12" r="2" stroke="currentColor" stroke-width="1.5"></circle>
+                                    <circle opacity="0.5" cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1.5"></circle>
+                                    <circle cx="19" cy="12" r="2" stroke="currentColor" stroke-width="1.5"></circle>
+                                </svg>
+                            </a>
+                            <ul  class="ltr:right-0 rtl:left-0 " [class.hidden]="data.id !== dataId">
+                                <li>
+                                    <a href="javascript:;">Download</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" >Share</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" >Edit</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" >Delete</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+
+    
+
+
+  
+    
+  
+
+    
+
+
+<!-- script -->
+
+
+
