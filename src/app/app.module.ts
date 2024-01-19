@@ -49,6 +49,7 @@ import {ShippingModule} from "./modules/shipping/shipping.module";
 import {StockModule} from "./modules/stock/stock.module";
 import {SupplierModule} from "./modules/supplier/supplier.module";
 import {PaymentModule} from "./modules/payment/payment.module";
+import { ModalComponent, ModalModule } from 'angular-custom-modal';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import {PaymentModule} from "./modules/payment/payment.module";
         ReactiveFormsModule,
         HttpClientModule,
         MenuModule,
+        ModalModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
