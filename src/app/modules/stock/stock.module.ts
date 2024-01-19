@@ -5,9 +5,13 @@ import { CreateStockComponent } from './create-stock/create-stock.component';
 import { EditStockComponent } from './edit-stock/edit-stock.component';
 import { ListStockComponent } from './list-stock/list-stock.component';
 import { ViewStockComponent } from './view-stock/view-stock.component';
-import {ShippingModule} from "../shipping/shipping.module";
-import { ListProductComponent } from './list-product/list-product/list-product.component';
-
+import { CreateWarehouseComponent } from './warehouse/create-warehouse/create-warehouse.component';
+import { EditWarehouseComponent } from './warehouse/edit-warehouse/edit-warehouse.component';
+import { ListWarehouseComponent } from './warehouse/list-warehouse/list-warehouse.component';
+import { ViewWarehouseComponent } from './warehouse/view-warehouse/view-warehouse.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -18,10 +22,17 @@ import { ListProductComponent } from './list-product/list-product/list-product.c
       EditStockComponent,
       ListStockComponent,
       ViewStockComponent,
-      ListProductComponent
+      CreateWarehouseComponent,
+      EditWarehouseComponent,
+      ListWarehouseComponent,
+      ViewWarehouseComponent
   ],
     imports: [
-        CommonModule
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        RouterModule
     ]
 })
 export class StockModule { }
