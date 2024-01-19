@@ -5,8 +5,11 @@ import { CreateShippingComponent } from './create-shipping/create-shipping.compo
 import { EditShippingComponent } from './edit-shipping/edit-shipping.component';
 import { ListShippingComponent } from './list-shipping/list-shipping.component';
 import { ViewShippingComponent } from './view-shipping/view-shipping.component';
-import { FormsModule } from '@angular/forms';
-import { ModalModule } from 'angular-custom-modal';
+import { CreatePersonComponent } from './delivery-person/create-person/create-person.component';
+import { EditPersonComponent } from './delivery-person/edit-person/edit-person.component';
+import { ListPersonComponent } from './delivery-person/list-person/list-person.component';
+import {FormsModule} from "@angular/forms";
+import {MenuModule} from "headlessui-angular";
 
 
 
@@ -18,6 +21,9 @@ import { ModalModule } from 'angular-custom-modal';
         EditShippingComponent,
         ListShippingComponent,
         ViewShippingComponent,
+        CreatePersonComponent,
+        EditPersonComponent,
+        ListPersonComponent
     ],
     exports: [
         ListShippingComponent
