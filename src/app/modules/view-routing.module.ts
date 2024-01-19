@@ -55,6 +55,10 @@ const routes: Routes = [
       component : ViewWarehouseComponent
     },
     {
+        path: 'stock/products',
+        component: ListProductComponent
+    },
+    {
         path: 'supplier',
         component: SupplierComponent
     },

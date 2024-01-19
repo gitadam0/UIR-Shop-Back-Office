@@ -8,6 +8,7 @@ import {StockModule} from "./stock/stock.module";
 import {PaymentModule} from "./payment/payment.module";
 import {SupplierModule} from "./supplier/supplier.module";
 
+
 @NgModule({
   declarations: [
   ],
