@@ -16,4 +16,9 @@ constructor(private http: HttpClient) {}
 getAll():Observable<OrderForm[]>{
   return this.http.get<OrderForm[]>(this.url+'orders') 
 }
+
+deleteById(id:Number | null):Observable<OrderForm>{
+  return this.http.delete<OrderForm>(this.url+"orders/"+id)
+}
+
 }

@@ -13,22 +13,32 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let data of tableData2;let i=index">
-                <td class="whitespace-nowrap"> {{i+1}} </td>
-                <td> {{parseClientList[i].address}} </td>
+            <tr *ngFor="let data of tableData2">
+                <td class="whitespace-nowrap"> {{data.id}} </td>
+                <td> {{pars(data.client) || ''}} </td>
                 <td> {{data.totalPaye}} </td>
                 <td>
                     <span
                         class="badge whitespace-nowrap"
                         [ngClass]="{
                                 'bg-primary': data.status == 'PENDING',
-                                'bg-secondary': data.status == 'DELIVERED',
+                                'bg-success': data.status == 'DELIVERED',
                                 'bg-danger': data.status == 'CANCELLED'
                             }">  {{data.status}} </span
                     >
                 </td>
-                <td>{{data.etatPaiement}}</td>
-                <td>{{data.methodDePaiement}}</td>
+                <td>
+                    <span
+                        class="badge whitespace-nowrap"
+                        [ngClass]="{
+                                'bg-danger': data.etatPaiement == 'ANNULE',
+                                'bg-success': data.etatPaiement == 'PAYE',
+                                'bg-primary': data.etatPaiement == 'EN_ATTENTE'
+                            }">  {{data.etatPaiement}} </span>
+                    </td>
+                
+                    
+                    <td>{{data.methodDePaiement =='EN_LIGNE' ? "EN LIGNE" : "A LA LIVRAISON"}}</td>
                 <td> {{data.totalPaye}} </td>
                 <td class="text-center">
                     <div class="dropdown w-max"  (click)="actionClick(data.id)" >
@@ -48,22 +58,36 @@
                                     <a href="javascript:;" >Share</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:;" >Edit</a>
+                                    <a href="javascript:;"  >Edit</a>
                                 </li>
+
                                 <li>
-                                    <a href="javascript:;" >Delete</a>
+                                    <a href="javascript:;" (click)="getId(data.id)">Delete</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </td>
             </tr>
+            
         </tbody>
     </table>
 </div>
-<div>
+<modal #modal1 class="modal-top">
+    <ng-template #modalHeader> <div>Modal Title</div> </ng-template>
+    <ng-template #modalBody>
+        <p>
+           Voulez vous supprimez cette livraison?
+        </p>
+    </ng-template>
+    <ng-template #modalFooter>
+        <button type="button" (click)="modal1.close()" class="btn btn-outline-primary">ANNULER</button>
+        <button type="button" (click)="deleteById(idModel)" class="btn btn-outline-danger">SUPPRIMER</button>
+    </ng-template>
+</modal>
 
-    
+
+
 
 
   
