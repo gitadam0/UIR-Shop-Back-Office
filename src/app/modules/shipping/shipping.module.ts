@@ -9,12 +9,11 @@ import { CreatePersonComponent } from './delivery-person/create-person/create-pe
 import { EditPersonComponent } from './delivery-person/edit-person/edit-person.component';
 import { ListPersonComponent } from './delivery-person/list-person/list-person.component';
 import {FormsModule} from "@angular/forms";
-import {MenuModule} from "headlessui-angular";
+import { ModalModule } from 'angular-custom-modal';
 
 
 
 @NgModule({
-    
     declarations: [
         ShippingComponent,
         CreateShippingComponent,
@@ -29,7 +28,9 @@ import {MenuModule} from "headlessui-angular";
         ListShippingComponent
     ],
     imports: [
-        CommonModule,FormsModule,ModalModule
+        CommonModule,
+        FormsModule,
+        ModalModule
     ]
 })
 export class ShippingModule { }

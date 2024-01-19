@@ -6,6 +6,7 @@ import {AppLayout} from './layouts/app-layout';
 import {AuthLayout} from './layouts/auth-layout';
 import {ListPersonComponent} from "./modules/shipping/delivery-person/list-person/list-person.component";
 import {AppComponent} from "./app.component";
+import { ListShippingComponent } from './modules/shipping/list-shipping/list-shipping.component';
 
 export const routes: Routes = [
     {
@@ -24,12 +25,16 @@ export const routes: Routes = [
             },
             {
                 path:'shipping',
-                component:ListPersonComponent,
+                
                 children:[
                     {
-                        path: 'delivery',
+                        path: 'deliveryPerson',
                         component: ListPersonComponent,
                         title: 'List Delivery Persons'
+                    },{
+                        path: 'delivery',
+                        component: ListShippingComponent,
+                        title: 'List Delivery'
                     }
                 ]
             }

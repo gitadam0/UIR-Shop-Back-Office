@@ -10,6 +10,7 @@ import {SupplierModule} from "./supplier/supplier.module";
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FormsModule } from "@angular/forms";
 import { DataTableModule } from '@bhplugin/ng-datatable';
+import { ModalModule } from "angular-custom-modal";
 
 // 
 
@@ -24,7 +25,7 @@ import { DataTableModule } from '@bhplugin/ng-datatable';
       ShippingModule,
       StockModule,
       PaymentModule,
-      SupplierModule,FormsModule
+      SupplierModule,FormsModule,ModalModule
     
   ],
   exports: [
