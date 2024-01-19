@@ -8,6 +8,10 @@ import {ProductCategoryComponent} from "./product-category/product-category.comp
 import {ShippingComponent} from "./shipping/shipping.component";
 import {StockComponent} from "./stock/stock.component";
 import {SupplierComponent} from "./supplier/supplier.component";
+import { CreateWarehouseComponent } from "./stock/warehouse/create-warehouse/create-warehouse.component";
+import { EditWarehouseComponent } from "./stock/warehouse/edit-warehouse/edit-warehouse.component";
+import { ListWarehouseComponent } from "./stock/warehouse/list-warehouse/list-warehouse.component";
+import { ViewWarehouseComponent } from "./stock/warehouse/view-warehouse/view-warehouse.component";
 
 const routes: Routes = [
     {
@@ -35,8 +39,20 @@ const routes: Routes = [
         component: ShippingComponent
     },
     {
-        path: 'stock',
-        component: StockComponent
+      path : 'stock/create-warehouse' ,
+      component : CreateWarehouseComponent
+    },
+    {
+      path : 'stock/list-warehouse' ,
+      component : ListWarehouseComponent
+    },
+    {
+      path : 'stock/edit-warehouse/:id' ,
+      component : EditWarehouseComponent
+    },
+    {
+      path : 'stock/warehouse/:id' ,
+      component : ViewWarehouseComponent
     },
     {
         path: 'supplier',

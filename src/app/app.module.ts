@@ -49,6 +49,7 @@ import {ShippingModule} from "./modules/shipping/shipping.module";
 import {StockModule} from "./modules/stock/stock.module";
 import {SupplierModule} from "./modules/supplier/supplier.module";
 import {PaymentModule} from "./modules/payment/payment.module";
+import { CreateWarehouseComponent } from './modules/stock/warehouse/create-warehouse/create-warehouse.component';
 
 
 @NgModule({
