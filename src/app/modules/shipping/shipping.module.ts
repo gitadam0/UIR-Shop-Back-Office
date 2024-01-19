@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShippingComponent } from './shipping.component';
 import { CreateShippingComponent } from './create-shipping/create-shipping.component';
@@ -14,6 +14,7 @@ import {MenuModule} from "headlessui-angular";
 
 
 @NgModule({
+    
     declarations: [
         ShippingComponent,
         CreateShippingComponent,
@@ -28,9 +29,7 @@ import {MenuModule} from "headlessui-angular";
         ListShippingComponent
     ],
     imports: [
-        CommonModule,
-        FormsModule,
-        MenuModule
+        CommonModule,FormsModule,ModalModule
     ]
 })
 export class ShippingModule { }
