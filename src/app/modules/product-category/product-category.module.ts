@@ -7,6 +7,7 @@ import {ListProductCategoryComponent} from "./list-product-category/list-product
 import {ViewProductCategoryComponent} from "./view-product-category/view-product-category.component";
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'angular-custom-modal';
+import { IconModule } from '../../shared/icon/icon.module';
 
 
 
@@ -21,7 +22,8 @@ import { ModalModule } from 'angular-custom-modal';
     imports: [
         CommonModule,
         FormsModule,
-        ModalModule
+        ModalModule,
+        IconModule
     ]
 })
 export class ProductCategoryModule { }
