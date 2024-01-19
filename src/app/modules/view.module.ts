@@ -7,6 +7,7 @@ import {ShippingModule} from "./shipping/shipping.module";
 import {StockModule} from "./stock/stock.module";
 import {PaymentModule} from "./payment/payment.module";
 import {SupplierModule} from "./supplier/supplier.module";
+import { CreateProductComponent } from "./product/create-product/create-product.component";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {SupplierModule} from "./supplier/supplier.module";
       StockModule,
       PaymentModule,
       SupplierModule,
+      
   ],
   exports: [
 
