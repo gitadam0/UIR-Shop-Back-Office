@@ -1,1 +1,57 @@
-<p>create-product works!</p>
+<div>
+    <form class="flex  items-center justify-center space-y-5" [formGroup]="form1" (ngSubmit)="submitForm1()" novalidate>
+        <div [ngClass]="isSubmitForm1 ? (form1.controls['name'].errors ? 'has-error' : 'has-success') : ''" class="w-7/12 panel">
+            <!-- <div> -->
+    
+            <label for="name">Product Name</label>
+            <input id="name" type="text" placeholder="Product Name" class="form-input mb-4" formControlName="name" />
+    
+            <label for="description">Product description</label>
+            <input id="description" type="text" placeholder="Product description" class="form-input mb-4" formControlName="description" />
+    
+            <label for="reference">Product reference</label>
+            <input id="reference" type="text" placeholder="Product reference" class="form-input mb-4" formControlName="reference" />
+    
+            <label for="prixProduct">Product price</label>
+            <input id="prixProduct" type="number" placeholder="Product price" class="form-input mb-4" formControlName="prixProduct" />
+    
+            <label for="quantity">Product quantity</label>
+            <input id="quantity" type="number" placeholder="Product quantity" class="form-input mb-4" formControlName="quantity" />
+    
+            <ng-container *ngIf="isSubmitForm1 && form1.controls['name'].errors">
+                <p class="mt-1 text-danger">Please fill the Product Name</p>
+            </ng-container>
+    
+            <div class=" lg:row-start-3">
+                <div class="mb-5 flex items-center justify-between">
+                    <h5 class="text-lg font-semibold dark:text-white-light">Placeholder</h5>
+                </div>
+                <div class="mb-2">
+                    <label for="categories" class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-400">Choose category</label>
+    
+                    <select
+                        id="categories"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-1.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                        formControlName="categoryID">
+                        <option *ngFor="let cat of categories" [value]="cat.idCategory" >
+                            {{ cat.nomCategory }}
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <label for="suppliers" class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-400">Choose supplier</label>
+                    <select
+                    formControlName="supplierID"
+                        id="suppliers"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-1.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    >
+                        <option *ngFor="let supplier of suppliers" [value]="supplier.idSupplier" >
+                            {{ supplier.nomSupplier }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary !mt-6">Submit Form</button>
+        </div>
+    </form>
+</div>

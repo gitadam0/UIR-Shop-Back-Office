@@ -20,6 +20,8 @@ export const routes: Routes = [
                 path: '',
                 loadChildren: () => import('./modules/view-routing.module').then(m => m.ViewRoutingModule), // @Lazy loading
             }
+            // ,
+            // { path: '', loadChildren: () => import('./components/components.module').then((d) => d.ComponentsModule) },
 
         ],
     },

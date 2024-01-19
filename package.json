@@ -22,10 +22,10 @@
         "@ngrx/store": "^15.4.0",
         "@ngx-translate/core": "^14.0.0",
         "@ngx-translate/http-loader": "^7.0.0",
-        "angular-custom-modal": "^1.2.0",
         "headlessui-angular": "^0.0.7",
         "ngx-scrollbar": "^11.0.0",
         "rxjs": "~7.8.0",
+        "sweetalert2": "^11.10.3",
         "swiper": "^11.0.5",
         "tslib": "^2.3.0",
         "zone.js": "~0.12.0"
