@@ -49,12 +49,14 @@ import {ShippingModule} from "./modules/shipping/shipping.module";
 import {StockModule} from "./modules/stock/stock.module";
 import {SupplierModule} from "./modules/supplier/supplier.module";
 import {PaymentModule} from "./modules/payment/payment.module";
+import { ModalModule } from 'angular-custom-modal';
 
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}),
+        RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
         BrowserModule,
+
         BrowserModule,
         BrowserAnimationsModule,
         CommonModule,
@@ -66,14 +68,16 @@ import {PaymentModule} from "./modules/payment/payment.module";
             loader: {
                 provide: TranslateLoader,
                 useFactory: httpTranslateLoader,
-                deps: [HttpClient],
-            },
+                deps: [HttpClient]
+            }
         }),
-        StoreModule.forRoot({index: indexReducer}),
+        StoreModule.forRoot({ index: indexReducer }),
         NgScrollbarModule.withConfig({
             visibility: 'hover',
-            appearance: 'standard',
+            appearance: 'standard'
         }),
+        ModalModule
+
     ],
     declarations: [
         AppComponent,

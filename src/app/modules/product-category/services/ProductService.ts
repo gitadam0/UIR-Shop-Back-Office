@@ -12,7 +12,13 @@ export class ProductService {
 
     constructor(private http: HttpClient) {}
 
-    getProducts(): Observable<any[]> {
+    getCategorys(): Observable<any[]> {
         return this.http.get<any[]>(this.apiUrl);
+    }
+    addCategory(category: any): Observable<any> {
+        return this.http.post(this.apiUrl, category);
+    }
+    deleteCategory(id:Number): Observable<any> {
+        return this.http.delete(this.apiUrl+"/"+id);
     }
 }

@@ -6,6 +6,8 @@ import {EditProductCategoryComponent} from "./edit-product-category/edit-product
 import {ListProductCategoryComponent} from "./list-product-category/list-product-category.component";
 import {ViewProductCategoryComponent} from "./view-product-category/view-product-category.component";
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'angular-custom-modal';
+import { IconModule } from '../../shared/icon/icon.module';
 
 
 
@@ -17,9 +19,11 @@ import { FormsModule } from '@angular/forms';
       ListProductCategoryComponent,
       ViewProductCategoryComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ModalModule,
+        IconModule
+    ]
 })
 export class ProductCategoryModule { }
