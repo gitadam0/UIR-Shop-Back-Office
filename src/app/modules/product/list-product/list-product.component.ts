@@ -16,8 +16,8 @@ export class ListProductComponent implements OnInit {
 
     ngOnInit() {
         this.fetchData();
-        this.fetchCategories();
-        this.fetchSuppliers();
+        // this.fetchCategories();
+        // this.fetchSuppliers();
     }
 
     navigate() {
@@ -37,32 +37,7 @@ export class ListProductComponent implements OnInit {
             }
         );
     }
-    fetchSuppliers() {
-        const apiUrlSuppliers = 'http://38.242.131.85:8057/api/suppliers';
-        this.httpClient.get<any[]>(apiUrlSuppliers).subscribe(
-            (data) => {
-                // Assuming the API response is an array, adjust this based on the actual response structure
-                // this.tableData = data;
-                console.log(data);
-            },
-            (error) => {
-                console.error('Error fetching Supplier data:', error);
-            }
-        );
-    }
-    fetchCategories() {
-        const apiUrlCategories = 'http://38.242.131.85:8057/api/categories';
-        this.httpClient.get<any[]>(apiUrlCategories).subscribe(
-            (data) => {
-                // Assuming the API response is an array, adjust this based on the actual response structure
-                // this.tableData = data;
-                console.log(data);
-            },
-            (error) => {
-                console.error('Error fetching Category data:', error);
-            }
-        );
-    }
+    
     deleteProduct(productId: number) {
         const deleteApiUrl = `http://38.242.131.85:8057/api/products/${productId}`;
 
