@@ -29,6 +29,7 @@
                     <img src='assets/images/delivery.jpg' alt="" class="h-8 w-8 rounded-md object-cover" />
                 </div>
                 <div>  {{ item.fullname }}</div>
+
                 <div> {{ item.email }} </div>
                 <div class="badge" [ngClass]="{'badge-outline-primary': item.status === DeliveryPersonStatus.AVAILABLE, 'badge-outline-unavailable': item.status === DeliveryPersonStatus.UNAVAILABLE}">
                     {{ item.status }}
