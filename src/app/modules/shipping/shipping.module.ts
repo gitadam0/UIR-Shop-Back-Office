@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShippingComponent } from './shipping.component';
 import { CreateShippingComponent } from './create-shipping/create-shipping.component';
@@ -9,7 +9,7 @@ import { CreatePersonComponent } from './delivery-person/create-person/create-pe
 import { EditPersonComponent } from './delivery-person/edit-person/edit-person.component';
 import { ListPersonComponent } from './delivery-person/list-person/list-person.component';
 import {FormsModule} from "@angular/forms";
-import {MenuModule} from "headlessui-angular";
+import { ModalModule } from 'angular-custom-modal';
 
 
 
@@ -30,7 +30,7 @@ import {MenuModule} from "headlessui-angular";
     imports: [
         CommonModule,
         FormsModule,
-        MenuModule
+        ModalModule
     ]
 })
 export class ShippingModule { }

@@ -7,6 +7,12 @@ import {ShippingModule} from "./shipping/shipping.module";
 import {StockModule} from "./stock/stock.module";
 import {PaymentModule} from "./payment/payment.module";
 import {SupplierModule} from "./supplier/supplier.module";
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { FormsModule } from "@angular/forms";
+import { DataTableModule } from '@bhplugin/ng-datatable';
+import { ModalModule } from "angular-custom-modal";
+
+// 
 
 @NgModule({
   declarations: [
@@ -19,7 +25,8 @@ import {SupplierModule} from "./supplier/supplier.module";
       ShippingModule,
       StockModule,
       PaymentModule,
-      SupplierModule,
+      SupplierModule,FormsModule,ModalModule
+    
   ],
   exports: [
 
