@@ -10,6 +10,9 @@ import { EditPersonComponent } from './delivery-person/edit-person/edit-person.c
 import { ListPersonComponent } from './delivery-person/list-person/list-person.component';
 import {FormsModule} from "@angular/forms";
 import { ModalModule } from 'angular-custom-modal';
+import { NgSelectModule } from '@ng-select/ng-select';
+
+
 
 
 
@@ -30,7 +33,8 @@ import { ModalModule } from 'angular-custom-modal';
     imports: [
         CommonModule,
         FormsModule,
-        ModalModule
+        ModalModule,
+        NgSelectModule
     ]
 })
 export class ShippingModule { }
