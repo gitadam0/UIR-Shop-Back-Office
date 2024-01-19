@@ -50,7 +50,6 @@ import {StockModule} from "./modules/stock/stock.module";
 import {SupplierModule} from "./modules/supplier/supplier.module";
 import {PaymentModule} from "./modules/payment/payment.module";
 
-
 @NgModule({
     imports: [
         RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}),
