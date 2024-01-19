@@ -11,7 +11,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FormsModule } from "@angular/forms";
 import { DataTableModule } from '@bhplugin/ng-datatable';
 import { ModalModule } from "angular-custom-modal";
-
 // 
 
 @NgModule({

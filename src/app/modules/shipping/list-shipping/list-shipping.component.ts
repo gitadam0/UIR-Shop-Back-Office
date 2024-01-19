@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { ShippingService } from 'src/app/services/shipping.service';
 import { OrderForm } from 'src/app/models/delivery/delivery.model';
-import { ModalComponent } from 'angular-custom-modal';
 import { Router } from '@angular/router';
 
 @Component({
