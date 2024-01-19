@@ -1,31 +1,31 @@
-<form class="space-y-5 flex items-center justify-center" [formGroup]="form1" (ngSubmit)="submitForm1()" novalidate>
-    <div [ngClass]="isSubmitForm1 ? form1.controls['nomProduct'].errors ? 'has-error' : 'has-success' : ''" class="w-80">
-        <!-- <div> -->
-
-        
-        <label for="nomProduct">Product Name</label>
-        <input id="nomProduct" type="text" placeholder="Product Name" class="form-input mb-4" formControlName="nomProduct" />
-        
-        <label for="description">Product description</label>
-        <input id="description" type="text" placeholder="Product description" class="form-input mb-4" formControlName="description" />
-
-        <label for="reference">Product reference</label>
-        <input id="reference" type="text" placeholder="Product reference" class="form-input mb-4" formControlName="reference" />
-
-        <label for="prixProduct">Product price</label>
-        <input id="prixProduct" type="number" placeholder="Product price" class="form-input mb-4" formControlName="prixProduct" />
-
-        <label for="quantity">Product quantity</label>
-        <input id="quantity" type="number" placeholder="Product quantity" class="form-input mb-4" formControlName="quantity" />
-
-
-        <!-- <ng-container *ngIf="isSubmitForm1 && !form1.controls['fullname'].errors">
-            <p class="mt-1 text-[#1abc9c]">Looks Good!</p>
-        </ng-container> -->
-        <ng-container *ngIf="isSubmitForm1 && form1.controls['nomProduct'].errors">
-            <p class="mt-1 text-danger">Please fill the Product Name</p>
-        </ng-container>
-        
-        <button type="submit" class="btn btn-primary !mt-6 ">Submit Form</button>
-    </div>
-</form>
+    <form class="space-y-5 flex items-center justify-center" [formGroup]="form1" (ngSubmit)="submitForm1()" novalidate>
+        <div [ngClass]="isSubmitForm1 ? form1.controls['nomProduct'].errors ? 'has-error' : 'has-success' : ''" class="w-80">
+            <!-- <div> -->
+    
+    
+            <label for="nomProduct">Product Name</label>
+            <input id="nomProduct" type="text" placeholder="Product Name" class="form-input mb-4" formControlName="nomProduct" />
+    
+            <label for="description">Product description</label>
+            <input id="description" type="text" placeholder="Product description" class="form-input mb-4" formControlName="description" />
+    
+            <label for="reference">Product reference</label>
+            <input id="reference" type="text" placeholder="Product reference" class="form-input mb-4" formControlName="reference" />
+    
+            <label for="prixProduct">Product price</label>
+            <input id="prixProduct" type="number" placeholder="Product price" class="form-input mb-4" formControlName="prixProduct" />
+    
+            <label for="quantity">Product quantity</label>
+            <input id="quantity" type="number" placeholder="Product quantity" class="form-input mb-4" formControlName="quantity" />
+    
+    
+            <!-- <ng-container *ngIf="isSubmitForm1 && !form1.controls['fullname'].errors">
+                <p class="mt-1 text-[#1abc9c]">Looks Good!</p>
+            </ng-container> -->
+            <ng-container *ngIf="isSubmitForm1 && form1.controls['nomProduct'].errors">
+                <p class="mt-1 text-danger">Please fill the Product Name</p>
+            </ng-container>
+    
+            <button type="submit" class="btn btn-primary !mt-6 ">Submit Form</button>
+        </div>
+    </form>

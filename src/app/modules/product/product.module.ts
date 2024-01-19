@@ -6,6 +6,7 @@ import {EditProductComponent} from './edit-product/edit-product.component';
 import {ViewProductComponent} from './view-product/view-product.component';
 import {ProductComponent} from "./product.component";
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         CreateProductComponent
     ],
     imports: [
-        CommonModule, ReactiveFormsModule
+        CommonModule, ReactiveFormsModule,RouterModule
     ]
 })
 export class ProductModule {
