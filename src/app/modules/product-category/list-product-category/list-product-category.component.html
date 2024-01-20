@@ -36,7 +36,9 @@
     <!--            <td> {{ data.sale }} </td>-->
                 <td class="text-center">
                     <ul class="flex items-center justify-center gap-2"><li>
-                            <a href="javascript:;" ngxTippy data-tippy-content="Edit">
+                            <a href="javascript:;" ngxTippy data-tippy-content="Edit"
+                               (click)="toggleCategoryEditModal(data.idCategory,data.nomCategory)"
+                            >
                                 <svg
                                     width="24"
                                     height="24"
@@ -60,7 +62,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:;" ngxTippy data-tippy-content="Delete"  (click)="deleteCategory(data.idCategory)">
+                            <a href="javascript:;" ngxTippy data-tippy-content="Delete"
+                               (click)="deleteCategory(data.idCategory)">
                                 <svg
                                     width="24"
                                     height="24"
@@ -94,13 +97,12 @@
         </table>
     </div>
 
-<!--    <button type="button" class="btn btn1 btn-outline-primary" (click)="addNewCategory()" >Add New Category</button>-->
-<!--    Register-->
-    <div class="panel lg:col-span-2">
-<!--         Trigger-->
-        <button type="button" class="btn btn1 btn-outline-primary" (click)="modal21?.open()">Add New Category</button>
 
-<!--         Modal-->
+<!--    ADD MODAL
+    <div class="panel lg:col-span-2">
+&lt;!&ndash;         Trigger&ndash;&gt;
+        <button type="button" class="btn btn1 btn-outline-primary" (click)="modal21?.open()">Add New Category</button>
+&lt;!&ndash;         Modal&ndash;&gt;
         <modal #modal21 class="modal-top auth-modal">
             <ng-template #modalHeader> <div class="!py-5">Register</div> </ng-template>
             <ng-template #modalBody>
@@ -115,7 +117,104 @@
             </ng-template>
 
         </modal>
+    </div>-->
+
+
+
+
+
+    <button class="bg-blue-600 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+            (click)="toggleCategoryModal()">
+        Add new Category
+    </button>
+
+    <div *ngIf="showCategoryModal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+        <div class="relative w-auto my-6 mx-auto max-w-3xl">
+            <!--content-->
+            <div [ngStyle]="{backgroundColor: getBackgroundColor()}"
+                 class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                <!--header-->
+                <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                    <h3 class="text-3xl font-semibold">
+                        Add Category
+                    </h3>
+                    <button class="p-1 ml-auto bg-transparent border-0 text-black  float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                            (click)="toggleCategoryModal()">
+                    <span [ngStyle]="{color: getTextColor()}" class=" text-black  h-6 w-6 text-2xl block outline-none focus:outline-none">
+                        ×
+                    </span>
+                    </button>
+                </div>
+                <!--body-->
+                <div class="p-6 flex-auto">
+                    <!-- Input fields -->
+                    <div class="mb-4">
+                        <input [(ngModel)]="categoryModel.nomCategory" type="text" placeholder="supplier name" class="p-2 border border-gray-300 rounded-md w-full">
+                    </div>
+                </div>
+                <!--footer-->
+                <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                    <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                            (click)="toggleCategoryModal()">
+                        Close
+                    </button>
+                    <button class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                            (click)="addNewCategory();"
+                    >
+                        Add Category
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
+    <div *ngIf="showCategoryModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
+
+
+
+
+
+
+
+    <div *ngIf="showCategoryEditModal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+        <div class="relative w-auto my-6 mx-auto max-w-3xl">
+            <!--content-->
+            <div [ngStyle]="{backgroundColor: getBackgroundColor()}"
+                 class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                <!--header-->
+                <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                    <h3 class="text-3xl font-semibold">
+                        Add Category
+                    </h3>
+                    <button class="p-1 ml-auto bg-transparent border-0 text-black  float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                            (click)="toggleCategoryEditModal(0,'')">
+                    <span [ngStyle]="{color: getTextColor()}" class=" text-black  h-6 w-6 text-2xl block outline-none focus:outline-none">
+                        ×
+                    </span>
+                    </button>
+                </div>
+                <!--body-->
+                <div class="p-6 flex-auto">
+                    <!-- Input fields -->
+                    <div class="mb-4">
+                        <input [(ngModel)]="categoryModel.nomCategory" type="text" placeholder="supplier name" class="p-2 border border-gray-300 rounded-md w-full">
+                    </div>
+                </div>
+                <!--footer-->
+                <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                    <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                            (click)="toggleCategoryEditModal(0,'')">
+                        Close
+                    </button>
+                    <button class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                            (click)="editCategory();"
+                    >
+                        Edit Category
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showCategoryEditModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
 
 
 
