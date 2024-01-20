@@ -5,6 +5,9 @@ import { CreateSupplierComponent } from './create-supplier/create-supplier.compo
 import { ListSupplierComponent } from './list-supplier/list-supplier.component';
 import { EditSupplierComponent } from './edit-supplier/edit-supplier.component';
 import { ViewSupplierComponent } from './view-supplier/view-supplier.component';
+import { ModalModule } from 'angular-custom-modal';
+import { IconModule } from '../../shared/icon/icon.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +20,10 @@ import { ViewSupplierComponent } from './view-supplier/view-supplier.component';
     ViewSupplierComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ModalModule,
+    IconModule,
+    FormsModule
   ]
 })
 export class SupplierModule { }
