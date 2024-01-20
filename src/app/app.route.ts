@@ -14,7 +14,7 @@ export const routes: Routes = [
             {
                 path: '',
                 component: IndexComponent,
-                title: 'Sales Admin | VRISTO - Multipurpose Tailwind Dashboard Template'
+                title: 'UIR Shop - Back Office'
             },
             {
                 path: '',
