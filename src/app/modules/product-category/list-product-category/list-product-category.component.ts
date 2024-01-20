@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ProductService } from '../services/ProductService';
-import { ModalComponent } from 'angular-custom-modal';
+// import { ModalComponent } from 'angular-custom-modal';
 
 
 
