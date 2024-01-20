@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { AppService } from '../../../services/app.service';
 import { DomSanitizer } from '@angular/platform-browser';
+// import { ModalComponent } from 'angular-custom-modal';
 
 
 
