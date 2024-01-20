@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { ProductService } from '../../product-category/services/ProductService';
 import { SupplierService } from '../services/SupplierService';
 import { data } from 'autoprefixer';
+import { TranslateService } from '@ngx-translate/core';
+import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
+import { AppService } from '../../../services/app.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -9,16 +14,37 @@ import { data } from 'autoprefixer';
      templateUrl: './list-supplier.component.html'
 })
 export class ListSupplierComponent {
+    store: any;
+    constructor(private supplierService: SupplierService,
+        public translate: TranslateService,
+        public storeData: Store<any>,
+        private appSetting: AppService,
+        private sanitizer: DomSanitizer
+    ) {
+        this.initStore();
+    }
+    async initStore() {
+        this.storeData
+            .select((d) => d.index)
+            .subscribe((d) => {
+                this.store = d;
+            });
+    }
+    getBackgroundColor(){
 
-    suppliers: any[] = [];
-
-    constructor(private supplierService: SupplierService) {
+        //console.log(this.store.theme);
+        if(this.store.theme=="light"){
+            return "#ffffff";
+        }
+        return "#1a2941";
     }
 
+    suppliers: any[] = [];
 
     ngOnInit(): void {
         this.fetchdata()
     }
+
     fetchdata() {
         this.supplierService.getSuppliers().subscribe(
             (data) => {
@@ -33,10 +59,16 @@ export class ListSupplierComponent {
 
 
     showModal = false;
-    showModal2 = false;
     toggleModal(){
         this.showModal = !this.showModal;
     }
+    supplierModel = {
+        nomSupplier: '',
+        mail: '',
+        phoneNumber: ''
+    };
+
+    showEditModal = false;
     editSupplierModelid=0;
     editSupplierModel = {
         idSupplier: 0,
@@ -44,9 +76,8 @@ export class ListSupplierComponent {
         mail: '',
         phoneNumber: ''
     };
-
-    toggleModal2( idd:any,a:any, b:any, c:any){
-        this.showModal2 = !this.showModal2;
+    toggleEditModal( idd:any,a:any, b:any, c:any){
+        this.showEditModal = !this.showEditModal;
         this.editSupplierModelid=idd;
         this.editSupplierModel.nomSupplier=a;
         this.editSupplierModel.mail=b;
@@ -54,11 +85,7 @@ export class ListSupplierComponent {
     }
 
 
-    supplierModel = {
-        nomSupplier: '',
-        mail: '',
-        phoneNumber: ''
-    };
+
     saveChanges() {
         // Check if the form is valid
         if (this.isFormValid()) {

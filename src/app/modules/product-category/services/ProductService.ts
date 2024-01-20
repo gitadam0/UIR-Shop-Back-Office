@@ -21,4 +21,7 @@ export class ProductService {
     deleteCategory(id:Number): Observable<any> {
         return this.http.delete(this.apiUrl+"/"+id);
     }
+    editCategory(id:Number,object:any): Observable<any> {
+        return this.http.put(this.apiUrl+"/"+id,object);
+    }
 }

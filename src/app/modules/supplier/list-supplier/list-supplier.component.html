@@ -41,7 +41,7 @@
                 <!--            <td> {{ data.sale }} </td>-->
                 <td class="text-center">
                     <ul class="flex items-center justify-center gap-2"><li>
-                        <a href="javascript:;" ngxTippy data-tippy-content="Edit" (click)="toggleModal2(data.idSupplier,data.nomSupplier,data.mail,data.phoneNumber)">
+                        <a href="javascript:;" ngxTippy data-tippy-content="Edit" (click)="toggleEditModal(data.idSupplier,data.nomSupplier,data.mail,data.phoneNumber)">
                             <svg
                                 width="24"
                                 height="24"
@@ -105,14 +105,14 @@
 
 
 
-<button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="toggleModal()">
+<button class="bg-blue-600 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="toggleModal()">
     Add new Supplier
 </button>
 
 <div *ngIf="showModal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
     <div class="relative w-auto my-6 mx-auto max-w-3xl">
         <!--content-->
-        <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+        <div [ngStyle]="{backgroundColor: getBackgroundColor()}" class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <!--header-->
             <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                 <h3 class="text-3xl font-semibold">
@@ -155,16 +155,24 @@
 
 
 
-<div *ngIf="showModal2" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+<div *ngIf="showEditModal"
+     class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+
+>
     <div class="relative w-auto my-6 mx-auto max-w-3xl">
         <!--content-->
-        <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+        <div
+
+            [ngStyle]="{backgroundColor: getBackgroundColor()}"
+             class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-gray-800 outline-none focus:outline-none"
+        >
+
             <!--header-->
             <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                 <h3 class="text-3xl font-semibold">
-                    Supplier
+                    Edit Supplier
                 </h3>
-                <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" (click)="toggleModal2(0,'','','')">
+                <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" (click)="toggleEditModal(0,'','','')">
                     <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
                         ×
                     </span>
@@ -185,11 +193,11 @@
             </div>
             <!--footer-->
             <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="toggleModal2(0,'','','')">
+                <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="toggleEditModal(0,'','','')">
                     Close
                 </button>
                 <button class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
-                        (click)="editSupplier()"
+                        (click)="editSupplier();toggleEditModal(0,'','','')"
                 >
                     Save Changes
                 </button>
@@ -197,5 +205,5 @@
         </div>
     </div>
 </div>
-<div *ngIf="showModal2" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
+<div *ngIf="showEditModal" class="opacity-50 fixed inset-0 z-40 bg-black"></div>
 
