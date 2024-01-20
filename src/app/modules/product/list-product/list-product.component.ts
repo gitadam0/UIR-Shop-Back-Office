@@ -37,7 +37,7 @@ export class ListProductComponent implements OnInit {
             }
         );
     }
-    
+
     deleteProduct(productId: number) {
         const deleteApiUrl = `http://38.242.131.85:8057/api/products/${productId}`;
 

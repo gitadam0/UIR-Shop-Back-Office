@@ -102,4 +102,25 @@ export class CreateProductComponent {
             padding: '10px 20px',
         });
     }
+
+
+
+
+    varietyName: string = '';
+    varietyValues: string = '';
+    // Add more properties for other options as needed
+    varieties: Map<string, string[]> = new Map();
+
+    addVariety() {
+
+        if(this.varieties.has(this.varietyName)){
+            this.varieties.get(this.varietyName)?.push(this.varietyValues);
+        }else {
+            this.varieties.set(this.varietyName, [this.varietyValues]);
+        }
+        this.varietyValues="";
+        console.log(this.varieties);
+    }
+
+
 }
