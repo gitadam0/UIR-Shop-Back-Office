@@ -3,8 +3,8 @@
         <div [ngClass]="isSubmitForm1 ? (form1.controls['name'].errors ? 'has-error' : 'has-success') : ''" class="w-7/12 panel">
             <!-- <div> -->
     
-            <label for="name">Product Name</label>
-            <input id="name" type="text" placeholder="Product Name" class="form-input mb-4" formControlName="name" />
+            <label for="nomProduct">Product Name</label>
+            <input id="nomProduct" type="text" placeholder="Product nomProduct" class="form-input mb-4" formControlName="nomProduct" />
     
             <label for="description">Product description</label>
             <input id="description" type="text" placeholder="Product description" class="form-input mb-4" formControlName="description" />
@@ -18,8 +18,8 @@
             <label for="quantity">Product quantity</label>
             <input id="quantity" type="number" placeholder="Product quantity" class="form-input mb-4" formControlName="quantity" />
     
-            <ng-container *ngIf="isSubmitForm1 && form1.controls['name'].errors">
-                <p class="mt-1 text-danger">Please fill the Product Name</p>
+            <ng-container *ngIf="isSubmitForm1 && form1.controls['nomProduct'].errors">
+                <p class="mt-1 text-danger">Please fill the Product nomProduct</p>
             </ng-container>
     
             <div class=" lg:row-start-3">
