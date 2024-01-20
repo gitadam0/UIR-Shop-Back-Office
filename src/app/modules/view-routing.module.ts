@@ -11,6 +11,7 @@ import { StockComponent } from './stock/stock.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { ListProductComponent } from './product/list-product/list-product.component';
 import { CreateClientComponent } from './client/create-client/create-client.component';
+import { EditProductComponent } from './product/edit-product/edit-product.component';
 
 const routes: Routes = [
     {
@@ -31,6 +32,7 @@ const routes: Routes = [
         children :[
             {path:"",component: ListProductComponent},
             {path:"create-product",component: CreateProductComponent},
+            {path:"edit-product/:id",component: EditProductComponent},
         ]
     },
     // {

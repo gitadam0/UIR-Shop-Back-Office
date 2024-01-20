@@ -26,7 +26,7 @@ export class CreateProductComponent {
     input4: string | undefined;
     initForm() {
         this.form1 = this.fb.group({
-            name: ['', Validators.required],
+            nomProduct: ['', Validators.required],
             description: ['', Validators.required],
             reference: ['', Validators.required],
             prixProduct: ['', Validators.required],
